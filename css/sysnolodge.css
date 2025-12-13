@@ -28,10 +28,11 @@
     background-color: aquamarine;
 }
 
-.section3{
-    height: 100vh;
-    width: 100%;
-}
-.wp-block-uagb-icon-list-child{
-    opacity: 0 ;
+.mouse-pointer{
+    width: 10px;
+    height: 10px;
+    background-color: #111;
+    position: fixed;
+    z-index: 2;
+    border-radius: 50%;
 }
