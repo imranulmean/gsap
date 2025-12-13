@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Helvetica, sans-serif;
+}
+
+.section1{
+    background-position: center;
+    background:linear-gradient(90deg,rgb(43,52,119) 47%,rgba(0,0,0,0) 91%,rgba(155,81,224,0) 100%),
+                url("https://sysnolodge.com.au/wp-content/uploads/2025/07/Web_Development_update.png");    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;    
+    height: 500px;
+    width: 100%;
+    display: block;
+    padding: 50px;
+}
+.top-header-container{
+    width: 500px;
+    color: #fff;
+}
+
+.section2{
+    height: 100vh;
+    width: 100%;
+    background-color: aquamarine;
+}
+
+.section3{
+    height: 100vh;
+    width: 100%;
+}
+.wp-block-uagb-icon-list-child{
+    opacity: 0 ;
+}
