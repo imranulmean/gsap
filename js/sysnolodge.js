@@ -1,20 +1,23 @@
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(SplitText);
 
 function loadSection1(){
     var tl1= gsap.timeline();
-    var topHeader= document.querySelector(".top-header-container h2");
-    var words =topHeader.textContent.split(" ");
-    topHeader.innerHTML = words.map(word => `<span class="word">${word}</span>`).join(" ");
-    
-    var subheader=document.querySelector(".subheader");
-    var subWords =subheader.textContent.split(" ");
-    subheader.innerHTML=subWords.map((w)=>`<span class="sub-word">${w}</span>`).join(" ");
+    let splitMainHeader = SplitText.create(".section1 .main-header", { type: "words, chars" });    
+
     tl1.from(".section1",{
         opacity:0,
-        duration:1,
-        y:-100
+        scale:0, 
+        duration:0.8,
+        transformOrigin:'top right'
     })
-    tl1.from(".top-header-container h2 .word, .top-header-container .sub-word, .top-header-container p",{
+    tl1.from(splitMainHeader.words, {
+        y: -150,
+        opacity: 0,
+        stagger: 0.2
+    })  
+    
+    tl1.from(".section1 .subheader, .section1 p",{
         opacity:0,
         stagger:0.2,
         // scale:0,
@@ -23,22 +26,34 @@ function loadSection1(){
 }
 
 function loadSection3(){
-    gsap.from(".section3",{
+    gsap.from('.section3 .services .wp-block-uagb-container',{
+        y:'-150px',
+        opacity:0,
+        stagger:0.5,
+        scrollTrigger:{
+            trigger:'.section3',
+            start:'top center',
+        }
+    })
+}
+
+function loadSection4(){
+    gsap.from(".section4",{
         opacity:0,
         duration:1,
         x:-100
     })
     
-    gsap.fromTo(".section3 .wp-block-uagb-icon-list-child", 
+    gsap.fromTo(".section4 .wp-block-uagb-icon-list-child", 
         {
             x:'-150px',
             opacity: 0
         },{
             x:'0px',
             opacity: 1,  
-            stagger:1,
+            stagger:0.2,
             scrollTrigger:{
-                trigger:".section3",
+                trigger:".section4",
                 start:"top center",
                 // markers:true
         
@@ -47,11 +62,19 @@ function loadSection3(){
     );
 }
 
-loadSection1();
-loadSection3();
-document.addEventListener('mousemove',(dets)=>{
-    gsap.to('.mouse-pointer',{
-        x:`${dets.x}px`,
-        y:`${dets.y}px`,
-    })
+document.addEventListener('DOMContentLoaded',function(){
+
+    const lenis = new Lenis();
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => {
+        lenis.raf(time * 1000); // Convert time from seconds to milliseconds
+    });
+    gsap.ticker.lagSmoothing(0);    
+    
+    if(screen.width>500){
+        loadSection1();
+        loadSection3();
+        loadSection4();
+    }
+
 })
