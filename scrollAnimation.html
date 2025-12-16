@@ -4,9 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.16/dist/lenis.css">
     <title>Document</title>
 </head>
 <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+      background-color: #111;
+      overflow-x: hidden;
+    }
     .grid {
         width: 100%;
         grid-template-columns: repeat(8, 1fr);
@@ -18,10 +28,12 @@
         /* grid-column: 1;
         grid-row: 1; */
         position: relative;
-    }    
+        grid-row: var(--r);
+        grid-column: var(--c);        
+      }    
     .grid__item-img{
-        height: 100px;
-        width: 100px;
+        height: 200px;
+        width: 200px;
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;        
@@ -29,135 +41,188 @@
 </style>
 <body>
     <div class="grid">
-        <div class="grid__item">
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/6.56a5d53b.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
-        </div>
-        <div class="grid__item">
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/20.cae33766.jpg'); transform: translate(0px, 0px); transform-origin: 0% 100%;"></div>
-        </div>
-        <div class="grid__item">
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/2.07ca36b5.jpg'); transform: translate(0px, 0px); transform-origin: 0% 100%;"></div>
-        </div>
-        <div class="grid__item">
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/19.c66c7e95.jpg'); transform: translate(0px, 0px); transform-origin: 0% 100%;"></div>
-        </div>
-        <div class="grid__item">
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/3.f6f48295.jpg'); transform: translate(0px, 0px); transform-origin: 0% 100%;"></div>
-        </div>
-        <div class="grid__item" >
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/4.516b9c03.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
-        </div>
-        <div class="grid__item" >
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/5.95d97ae8.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
-        </div>
-        <div class="grid__item" >
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/1.1770e3b3.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
-        </div>
-        <div class="grid__item" >
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/7.87dc6e8b.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
-        </div>
-        <div class="grid__item" >
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/8.0bda5054.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
-        </div>
-        <div class="grid__item" >
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/9.27ccf354.jpg'); transform: translate(0px, 0px); transform-origin: 0% 100%;"></div>
-        </div>
-        <div class="grid__item" >
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/18.ab0e512b.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
-        </div>
-        <div class="grid__item" >
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/10.f7990335.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
-        </div>
-        <div class="grid__item">
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/11.ef4a18eb.jpg'); transform: translate(0px, 0px); transform-origin: 0% 100%;"></div>
-        </div>
-        <div class="grid__item" >
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/12.1c611c29.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
-        </div>
-        <div class="grid__item" >
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/13.20baef1e.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
-        </div>
-        <div class="grid__item" >
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/14.73a4162c.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
-        </div>
-        <div class="grid__item" >
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/15.fdc25495.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
-        </div>
-        <div class="grid__item" >
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/16.fce8daf8.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
-        </div>
-        <div class="grid__item" >
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/17.acd308fd.jpg'); transform: translate(0px, 0px); transform-origin: 0% 100%;"></div>
-        </div>
-        <div class="grid__item" >
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/18.ab0e512b.jpg'); transform: translate(0px, 0px); transform-origin: 0% 100%;"></div>
-        </div>
-        <div class="grid__item" >
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/19.c66c7e95.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
-        </div>
-        <div class="grid__item" >
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/20.cae33766.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
-        </div>
-        <div class="grid__item" >
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/1.1770e3b3.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
-        </div>
-        <div class="grid__item" >
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/2.07ca36b5.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
-        </div>
-        <div class="grid__item" >
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/3.f6f48295.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
-        </div>
-        <div class="grid__item" >
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/4.516b9c03.jpg'); transform: translate(0px, 0px); transform-origin: 0% 100%;"></div>
-        </div>
-        <div class="grid__item" >
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/5.95d97ae8.jpg'); transform: translate(0px, 0px); transform-origin: 0% 100%;"></div>
-        </div>
-        <div class="grid__item">
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/6.56a5d53b.jpg'); transform: translate(0px, 0px); transform-origin: 0% 100%;"></div>
-        </div>
-        <div class="grid__item">
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/7.87dc6e8b.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
-        </div>
-        <div class="grid__item">
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/8.0bda5054.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
-        </div>
-        <div class="grid__item">
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/9.27ccf354.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
-        </div>
-        <div class="grid__item">
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/10.f7990335.jpg'); transform: translate(0px, 0px); transform-origin: 0% 100%;"></div>
-        </div>
-        <div class="grid__item">
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/11.ef4a18eb.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
-        </div>
-        <div class="grid__item">
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/12.1c611c29.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
-        </div>
-        <div class="grid__item">
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/13.20baef1e.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
-        </div>
-        <div class="grid__item">
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/14.73a4162c.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
-        </div>
-        <div class="grid__item">
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/15.fdc25495.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
-        </div>
-        <div class="grid__item">
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/16.fce8daf8.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
-        </div>
-        <div class="grid__item">
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/17.acd308fd.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
-        </div>
-        <div class="grid__item">
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/18.ab0e512b.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
-        </div>
-        <div class="grid__item">
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/19.c66c7e95.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
-        </div>
-        <div class="grid__item">
-          <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/20.cae33766.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
-        </div>
+      <div class="grid__item" style="--r:1; --c:2;">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/6.56a5d53b.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
       </div>
+      <div class="grid__item" style="--r:1; --c:6;">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/20.cae33766.jpg'); transform: translate(0px, 0px); transform-origin: 0% 100%;"></div>
+      </div>
+      <div class="grid__item" style="--r:2; --c:5;">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/2.07ca36b5.jpg'); transform: translate(0px, 0px); transform-origin: 0% 100%;"></div>
+      </div>
+      <div class="grid__item" style="--r:2; --c:7;">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/19.c66c7e95.jpg'); transform: translate(0px, 0px); transform-origin: 0% 100%;"></div>
+      </div>
+      <div class="grid__item" style="--r:3; --c:1;">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/3.f6f48295.jpg'); transform: translate(0px, 0px); transform-origin: 0% 100%;"></div>
+      </div>
+      <div class="grid__item" style="--r:3; --c:4;">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/4.516b9c03.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
+      </div>
+      <div class="grid__item" style="--r:4; --c:1;">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/5.95d97ae8.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
+      </div>
+      <div class="grid__item" style="--r:4; --c:7;">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/1.1770e3b3.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
+      </div>
+      <div class="grid__item" style="--r:5; --c:3;">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/7.87dc6e8b.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
+      </div>
+      <div class="grid__item" style="--r:5; --c:6;">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/8.0bda5054.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
+      </div>
+      <div class="grid__item" style="--r:6; --c:1;">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/9.27ccf354.jpg'); transform: translate(0px, 0px); transform-origin: 0% 100%;"></div>
+      </div>
+      <div class="grid__item" style="--r:6; --c:3;">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/18.ab0e512b.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
+      </div>
+      <div class="grid__item" style="--r:7; --c:2;">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/10.f7990335.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
+      </div>
+      <div class="grid__item" style="--r:7; --c:5;">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/11.ef4a18eb.jpg'); transform: translate(0px, 0px); transform-origin: 0% 100%;"></div>
+      </div>
+      <div class="grid__item" style="--r:8; --c:7;">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/12.1c611c29.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
+      </div>
+      <div class="grid__item" style="--r:8; --c:2;">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/13.20baef1e.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
+      </div>
+      <div class="grid__item" style="--r:9; --c:3;">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/14.73a4162c.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
+      </div>
+      <div class="grid__item" style="--r:9; --c:6;">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/15.fdc25495.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
+      </div>
+      <div class="grid__item" style="--r:10; --c:4;">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/16.fce8daf8.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
+      </div>
+      <div class="grid__item" style="--r:10; --c:8;">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/17.acd308fd.jpg'); transform: translate(0px, 0px); transform-origin: 0% 100%;"></div>
+      </div>
+      <div class="grid__item" style="--r:11; --c:1;">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/18.ab0e512b.jpg'); transform: translate(0px, 0px); transform-origin: 0% 100%;"></div>
+      </div>
+      <div class="grid__item" style="--r:11; --c:2;">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/19.c66c7e95.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
+      </div>
+      <div class="grid__item" style="--r:12; --c:5;">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/20.cae33766.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
+      </div>
+      <div class="grid__item" style="--r:12; --c:8;">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/1.1770e3b3.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
+      </div>
+      <div class="grid__item" style="--r:13; --c:4;">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/2.07ca36b5.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
+      </div>
+      <div class="grid__item" style="--r:13; --c:8;">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/3.f6f48295.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
+      </div>
+      <div class="grid__item" style="--r:14; --c:8;">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/4.516b9c03.jpg'); transform: translate(0px, 0px); transform-origin: 0% 100%;"></div>
+      </div>
+      <div class="grid__item" style="--r:14; --c:1;">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/5.95d97ae8.jpg'); transform: translate(0px, 0px); transform-origin: 0% 100%;"></div>
+      </div>
+      <!-- <div class="grid__item">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/6.56a5d53b.jpg'); transform: translate(0px, 0px); transform-origin: 0% 100%;"></div>
+      </div>
+      <div class="grid__item">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/7.87dc6e8b.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
+      </div>
+      <div class="grid__item">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/8.0bda5054.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
+      </div>
+      <div class="grid__item">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/9.27ccf354.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
+      </div>
+      <div class="grid__item">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/10.f7990335.jpg'); transform: translate(0px, 0px); transform-origin: 0% 100%;"></div>
+      </div>
+      <div class="grid__item">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/11.ef4a18eb.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
+      </div>
+      <div class="grid__item">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/12.1c611c29.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
+      </div>
+      <div class="grid__item">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/13.20baef1e.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
+      </div>
+      <div class="grid__item">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/14.73a4162c.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
+      </div>
+      <div class="grid__item">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/15.fdc25495.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
+      </div>
+      <div class="grid__item">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/16.fce8daf8.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
+      </div>
+      <div class="grid__item">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/17.acd308fd.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
+      </div>
+      <div class="grid__item">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/18.ab0e512b.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
+      </div>
+      <div class="grid__item">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/19.c66c7e95.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
+      </div>
+      <div class="grid__item">
+        <div class="grid__item-img" style="background-image: url('https://tympanus.net/Development/ScrollAnimationsGrid/20.cae33766.jpg'); transform: translate(0px, 0px); transform-origin: 100% 100%;"></div>
+      </div> -->
+    </div>
+    <section style="height:100vh; width:100%; background-color:orangered;"></section>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.3.16/dist/lenis.min.js"></script> 
+    <script>
+            
+      function startScrollAnimation(){
+       var tl= gsap.timeline();
+       var elems=document.querySelectorAll('.grid__item');
+       elems.forEach((elem)=>{
+         let image= elem.querySelector(".grid__item-img")
+         let xTransform=gsap.utils.random(-100,100);
+         tl
+          .set(image,{
+            transformOrigin:`${xTransform<0 ? 0 : '100%'}`
+          },"start")
+          .to(image,{
+            scale:0,
+            ease:"none",
+            scrollTrigger:{
+              trigger:elem,
+              start:"top top",
+              end:'bottom top',
+              // markers:true,
+              scrub:true,
+            }
+          },"start")
+          .to(elem,{
+            xPercent:xTransform,
+            ease:"none",
+            scrollTrigger:{
+              trigger:elem,
+              start:"top bottom",
+              end:'bottom top',
+              scrub:true,
+            }
+          },"start")
+       })
+      }
+
+      document.addEventListener('DOMContentLoaded',function(){
+        gsap.registerPlugin(ScrollTrigger);
+        const lenis = new Lenis({
+          // infinite:true
+        });
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => {
+            lenis.raf(time * 1000); // Convert time from seconds to milliseconds
+        });
+        gsap.ticker.lagSmoothing(0); 
+        startScrollAnimation();   
+      })
+    </script>    
 </body>
 </html>

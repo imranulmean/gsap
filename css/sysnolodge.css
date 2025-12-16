@@ -15,7 +15,9 @@
     height: 500px;
     width: 100%;
     display: block;
-    padding: 50px;
+    padding: 50px;    
+    /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
+    /* will-change: clip-path; */
 }
 .top-header-container{
     width: 500px;
