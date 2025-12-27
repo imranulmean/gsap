@@ -15,18 +15,19 @@
     top: 10%;
     left: calc(50% - 100px);
     transform-style: preserve-3d;
-    transform: perspective(1000px);
+    transform: perspective(15000px);
     animation: autoRun 20s linear infinite;
     z-index: 2;
+    -webkit-font-smoothing: antialiased;
 }
 
 
 
 @keyframes autoRun{
     from{
-        transform: perspective(1000px) rotateX(-10deg) rotateY(0deg);
+        transform: perspective(15000px) rotateX(-5deg) rotateY(0deg);
     }to{
-        transform: perspective(1000px) rotateX(-10deg) rotateY(360deg);
+        transform: perspective(15000px) rotateX(-5deg) rotateY(360deg);
     }
 }
 
@@ -38,7 +39,7 @@
     border-radius: 20px;
     transform: 
         rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
-        translateZ(550px);
+        translateZ(400px);
 }
 
 .banner .content{
